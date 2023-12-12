@@ -1,1 +1,52 @@
 @use "./variables" as *;
+
+.employee {
+    background-color: $color-white;
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    box-shadow: -3px 5px 12px rgba(0, 0, 0, 0.3);
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    min-width: auto;
+    min-height: auto;
+
+    &__name {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    &__role {
+        color: $color-grey;
+        margin-bottom: 0.5rem;
+    }
+
+    &__counter {
+        border-radius: 1rem;
+        background-color: rgb(182, 235, 254);
+        align-items: center;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    &__button {
+        align-self: center;
+        justify-content: center;
+        border-radius: 1.5rem;
+        background-color: $color-white;
+        border: none;
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+}
