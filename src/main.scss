@@ -1,0 +1,41 @@
+@use "./styles/variables" as *;
+@use "./styles/layout";
+@use "./styles/components";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: $font-body;
+}
+
+html {
+    font-size: 16px;
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
+
+    html {
+        font-size: 22px;
+    }
+}
+
+@media screen and (min-width: $breakpoint-laptop) {
+
+    html {
+        font-size: 23px;
+    }
+}
+
+@media screen and (min-width: $breakpoint-desktop) {
+
+    html {
+        font-size: 24px;
+    }
+}
+
+@media screen and (min-width: $breakpoint-large-desktop) {
+
+    html {
+        font-size: 40px;
+    }
+}
