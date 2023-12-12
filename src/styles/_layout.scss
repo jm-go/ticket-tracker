@@ -1,8 +1,8 @@
 @use "./variables" as *;
 
 .tracker {
-    border: 2px solid #ccc;
-    margin: 4rem;
+    border: 2px solid #ffffff;
+    margin: 2rem;
     padding: 2rem;
 
     &__header {
@@ -15,32 +15,61 @@
 
     &__employees {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         gap: 0.8rem;
+        flex-wrap: wrap;
     }
 }
 
 .employee {
-    //display: flex;
     background-color: white;
     padding: 0.7rem;
     margin-bottom: 1rem;
     border-radius: 1rem;
     box-shadow: -3px 5px 12px rgba(0,0,0,0.3);
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    min-width: auto;
+    min-height: auto;
 
     &__name {
         font-weight: bold;
+        margin-bottom: 0.5rem;
     }
 
     &__role {
         color: #666;
+        margin-bottom: 0.5rem;
     }
 
     &__counter {
-        //display: flex;
         border-radius: 1rem;
-        background-color: beige;
+        background-color: rgb(182, 235, 254);
         align-items: center;
-        gap: 3rem;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        //gap: 1rem;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    &__button {
+        //margin-top: 0.5rem;
+        align-self: center;
+        justify-content: center;
+        border-radius: 1.5rem;
+        background-color: white;
+        border: none;
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.2rem;
+        cursor: pointer;
     }
 }
