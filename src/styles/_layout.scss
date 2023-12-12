@@ -1,1 +1,46 @@
 @use "./variables" as *;
+
+.tracker {
+    border: 2px solid #ccc;
+    margin: 4rem;
+    padding: 2rem;
+
+    &__header {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    &__employees {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}
+
+.employee {
+    //display: flex;
+    background-color: white;
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    box-shadow: -3px 5px 12px rgba(0,0,0,0.3);
+
+    &__name {
+        font-weight: bold;
+    }
+
+    &__role {
+        color: #666;
+    }
+
+    &__counter {
+        //display: flex;
+        border-radius: 1rem;
+        background-color: beige;
+        align-items: center;
+        gap: 3rem;
+    }
+}
