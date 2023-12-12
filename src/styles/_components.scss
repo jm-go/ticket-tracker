@@ -2,24 +2,25 @@
 
 .employee {
     background-color: $color-white;
-    padding: 0.7rem;
+    padding: 0.8rem;
     margin-bottom: 1rem;
     border-radius: 1rem;
     box-shadow: -3px 5px 12px rgba(0, 0, 0, 0.3);
-    width: fit-content;
     display: flex;
     flex-direction: column;
-    min-width: auto;
-    min-height: auto;
+    width: 12rem;
+    height: 10rem;
 
     &__name {
         font-weight: bold;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.3rem;
     }
 
     &__role {
         color: $color-grey;
         margin-bottom: 0.5rem;
+        font-size: 0.85rem;
+        overflow: hidden;
     }
 
     &__counter {
@@ -46,7 +47,7 @@
         border: none;
         width: 2rem;
         height: 2rem;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         cursor: pointer;
     }
 }

@@ -21,7 +21,7 @@ const Employee = ({ name, role }: EmployeeProps) => {
       <h3 className="employee__name">{name}</h3>
       <p className="employee__role">{role}</p>
       <div className="employee__counter">
-        <p>Counter</p>
+        <p>Tickets</p>
         {ticketCount}
         <div className="employee__buttons">
           <button type="button" className="employee__button" onClick={decrementCount}>
