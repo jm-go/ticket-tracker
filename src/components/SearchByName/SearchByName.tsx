@@ -1,18 +1,19 @@
 import { FormEventHandler } from "react";
 
+// Define the type for the props
 type SearchByNameProps = {
   searchTerm: string;
-  handleInput: FormEventHandler<HTMLInputElement>;
+  onChange: FormEventHandler<HTMLInputElement>;
 };
 
-const SearchByName = ({ searchTerm, handleInput }: SearchByNameProps) => {
+const SearchByName = ({ searchTerm, onChange }: SearchByNameProps) => {
   return (
     <div className="search">
       <input
         type="text"
         placeholder="Search by name"
         value={searchTerm}
-        onChange={handleInput}
+        onChange={onChange}
         className="search__input"
       />
     </div>
