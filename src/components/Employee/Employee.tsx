@@ -1,19 +1,33 @@
+import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
 
 type EmployeeProps = {
   id?: number;
+  index: number;
   name: string;
   role: string;
   counter: number;
+  saveCount: (index: number, value: number) => void;
 };
 
-const Employee = ({ name, role, counter}: EmployeeProps) => {
-  const [ticketCount, setTicketCount] = useState<number>(0);
+const Employee = ({
+  index,
+  name,
+  role,
+  counter,
+  saveCount
+}: EmployeeProps) => {
+  const [ticketCount, setTicketCount] = useState<number>(counter);
 
-  const incrementCount = () => setTicketCount(ticketCount + 1);
-  const decrementCount = () => {
+  const incrementCounter = () => {
+    setTicketCount(ticketCount + 1);
+    saveCount(index, ticketCount);
+  };
+
+  const decrementCounter = () => {
     if (ticketCount > 0) {
       setTicketCount(ticketCount - 1);
+      saveCount(index, ticketCount);
     }
   };
 
@@ -23,13 +37,21 @@ const Employee = ({ name, role, counter}: EmployeeProps) => {
       <p className="employee__role">{role}</p>
       <div className="employee__counter">
         <p>Tickets</p>
-        {counter}
+        {ticketCount}
         <div className="employee__buttons">
-          <button type="button" className="employee__button" onClick={decrementCount}>
-            -
+          <button
+            type="button"
+            className="employee__button"
+            onClick={decrementCounter}
+          >
+            <Minus />
           </button>
-          <button type="button" className="employee__button" onClick={incrementCount}>
-            +
+          <button
+            type="button"
+            className="employee__button"
+            onClick={incrementCounter}
+          >
+            <Plus/>
           </button>
         </div>
       </div>
