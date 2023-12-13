@@ -2,11 +2,10 @@ import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
 
 type EmployeeProps = {
-  id?: number;
-  index: number;
+  index: number; 
   name: string;
   role: string;
-  counter: number;
+  counter: number; 
   saveCount: (index: number, value: number) => void;
 };
 

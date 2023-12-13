@@ -1,5 +1,4 @@
 import SearchByName from "./components/SearchByName/SearchByName";
-import SearchByRole from "./components/SearchByRole/SearchByRole";
 import "./main.scss";
 import Employee from "./components/Employee/Employee";
 import team from "./data/team";
@@ -10,11 +9,9 @@ const App = () => {
   const [tickets, setTickets] = useState(Array<number>(team.length + 1).fill(0));
 
   const saveCount = (index: number, value: number) => {
-    let tempTickets = tickets;
-    tempTickets[index] = value;
+    let tempTickets = tickets; //make copy of our list 
+    tempTickets[index] = value; // 
     setTickets(tempTickets);
-    // setTickets(tickets + 1);
-    console.log(tickets[index]);
   }
 
   const handleInput = (event: FormEvent<HTMLInputElement>) => {
