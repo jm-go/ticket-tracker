@@ -4,9 +4,10 @@ type EmployeeProps = {
   id?: number;
   name: string;
   role: string;
+  counter: number;
 };
 
-const Employee = ({ name, role }: EmployeeProps) => {
+const Employee = ({ name, role, counter}: EmployeeProps) => {
   const [ticketCount, setTicketCount] = useState<number>(0);
 
   const incrementCount = () => setTicketCount(ticketCount + 1);
@@ -22,7 +23,7 @@ const Employee = ({ name, role }: EmployeeProps) => {
       <p className="employee__role">{role}</p>
       <div className="employee__counter">
         <p>Tickets</p>
-        {ticketCount}
+        {counter}
         <div className="employee__buttons">
           <button type="button" className="employee__button" onClick={decrementCount}>
             -

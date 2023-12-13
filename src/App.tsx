@@ -24,15 +24,14 @@ const App = () => {
   return (
     <div className="tracker">
       <h2 className="tracker__header">Ticket Tracker</h2>
-      <SearchByName
-        searchTerm={searchTerm}
-        handleInput={handleInput} />
+      <SearchByName searchTerm={searchTerm} handleInput={handleInput} />
       <div className="tracker__employees">
         {filteredTeam.map((employee) => (
           <Employee
             key={employee.id}
             name={employee.name}
             role={employee.role}
+            counter={0}
           />
         ))}
       </div>

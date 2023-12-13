@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: #a1e7fb;
+    background-color: $pastel-blue;
 }
 
 html {
@@ -26,14 +26,14 @@ html {
 @media screen and (min-width: $breakpoint-laptop) {
 
     html {
-        font-size: 23px;
+        font-size: 25px;
     }
 }
 
 @media screen and (min-width: $breakpoint-desktop) {
 
     html {
-        font-size: 24px;
+        font-size: 30px;
     }
 }
 
