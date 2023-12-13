@@ -1,1 +1,71 @@
 @use "./variables" as *;
+
+.employee {
+    background-color: $color-white;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    box-shadow: -3px 5px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    width: 12rem;
+    height: 10rem;
+
+    &__name {
+        font-weight: bold;
+        margin-bottom: 0.3rem;
+    }
+
+    &__role {
+        color: $color-grey;
+        margin-bottom: 0.5rem;
+        font-size: 0.85rem;
+        overflow: hidden;
+    }
+
+    &__counter {
+        border-radius: 1rem;
+        background-color: $pastel-blue;
+        align-items: center;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    &__button {
+        align-self: center;
+        justify-content: center;
+        border-radius: 1.5rem;
+        background-color: $color-white;
+        border: none;
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.1rem;
+        cursor: pointer;
+    }
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+
+    &__input {
+        border-radius: 1rem;
+        border: none;
+        font-size: 0.6rem;
+        border: 1px solid $color-beige;
+        text-align: center;
+        height: 1.3rem;
+
+    }
+}
