@@ -1,5 +1,6 @@
 import { FormEventHandler } from "react";
 
+// Define the type for the props
 type SearchByNameProps = {
   searchTerm: string;
   onChange: FormEventHandler<HTMLInputElement>;
