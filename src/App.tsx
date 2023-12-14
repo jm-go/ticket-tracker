@@ -20,7 +20,7 @@ const App = () => {
  * 3. Sets the updated tickets array to the state, triggering a re-render with the new counts.
  */
   const saveCount = (index: number, value: number) => {
-    let tempTickets = tickets; 
+    let tempTickets = [...tickets]; 
     tempTickets[index] = value; 
     setTickets(tempTickets);
   }

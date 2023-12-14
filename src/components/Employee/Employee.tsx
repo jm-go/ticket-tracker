@@ -24,14 +24,16 @@ const Employee = ({ id, name, role, counter, saveCount }: EmployeeProps) => {
    *    maintaining consistent state across the application.
    */
   const incrementCounter = () => {
-    setTicketCount(ticketCount + 1);
-    saveCount(id, ticketCount);
+    const newTicketCount = ticketCount + 1;
+    setTicketCount(newTicketCount);
+    saveCount(id, newTicketCount);
   };
 
   const decrementCounter = () => {
     if (ticketCount > 0) {
-      setTicketCount(ticketCount - 1);
-      saveCount(id, ticketCount);
+      const newTicketCount = ticketCount - 1;
+      setTicketCount(newTicketCount);
+      saveCount(id, newTicketCount);
     }
   };
 
