@@ -14,10 +14,9 @@ const App = () => {
  * @param {number} index - The index of the employee in the tickets array.
  * @param {number} value - The new ticket count value for the employee.
  *
- * This function:
- * 1. Creates a copy of the current tickets array to ensure immutability.
- * 2. Updates the ticket count for the employee at the specified index.
- * 3. Sets the updated tickets array to the state, triggering a re-render with the new counts.
+ * This function creates a copy of the current tickets array.
+ * It updates the ticket count for the employee at the specified index.
+ * It sets the updated tickets array to the state, triggering a re-render with the new counts.
  */
   const saveCount = (index: number, value: number) => {
     let tempTickets = [...tickets]; 

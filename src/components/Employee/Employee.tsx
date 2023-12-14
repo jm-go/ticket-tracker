@@ -14,14 +14,11 @@ const Employee = ({ id, name, role, counter, saveCount }: EmployeeProps) => {
   const [ticketCount, setTicketCount] = useState<number>(counter);
 
   /**
-   * Increments the ticket count for this employee.
+   * Increments the ticket count for the employee.
    *
-   * This function:
-   * 1. Updates the local state `ticketCount` by incrementing its current value.
-   * 2. Calls the `saveCount` function provided by App, with the
-   *    `id` of this employee and the newly updated `ticketCount`.
-   *    This ensures that the updated count is also reflected in the parent component's state,
-   *    maintaining consistent state across the application.
+   * Increments `ticketCount` and updates the local state.
+   * Calls `saveCount` from parent (`App`) with updated count and employee's `id`,
+   *   to synchronise the update with the parent's state.
    */
   const incrementCounter = () => {
     const newTicketCount = ticketCount + 1;
@@ -29,6 +26,13 @@ const Employee = ({ id, name, role, counter, saveCount }: EmployeeProps) => {
     saveCount(id, newTicketCount);
   };
 
+  /**
+   * Decrements the ticket count for the employee.
+   *
+   * It decrements `ticketCount` and updates the local state.
+   * It calls `saveCount` from parent (`App`) with the updated count and employee's `id`,
+   *   to synchronise parent's state with the change.
+   */
   const decrementCounter = () => {
     if (ticketCount > 0) {
       const newTicketCount = ticketCount - 1;
