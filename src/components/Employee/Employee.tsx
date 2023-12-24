@@ -1,5 +1,4 @@
 import { Minus, Plus } from "lucide-react";
-import { useState } from "react";
 
 type EmployeeProps = {
   id: number;
@@ -10,33 +9,29 @@ type EmployeeProps = {
 };
 
 const Employee = ({ id, name, role, counter, saveCount }: EmployeeProps) => {
-  // State to manage the individual ticket count for the specific employee
-  const [ticketCount, setTicketCount] = useState<number>(counter);
 
-  /**
-   * Increments the ticket count for the employee.
-   *
-   * Increments `ticketCount` and updates the local state.
-   * Calls `saveCount` from parent (`App`) with updated count and employee's `id`,
-   *   to synchronise the update with the parent's state.
-   */
+/**
+ * Increments the ticket count for the employee.
+ *
+ * Calculates the new ticket count by incrementing the current count.
+ * Calls `saveCount` from the parent (`App`) with the updated count and employee's `id`
+ * to synchronise the update with the parent's state.
+ */
   const incrementCounter = () => {
-    const newTicketCount = ticketCount + 1;
-    setTicketCount(newTicketCount);
+    const newTicketCount = counter + 1;
     saveCount(id, newTicketCount);
   };
 
-  /**
-   * Decrements the ticket count for the employee.
-   *
-   * It decrements `ticketCount` and updates the local state.
-   * It calls `saveCount` from parent (`App`) with the updated count and employee's `id`,
-   *   to synchronise parent's state with the change.
-   */
+/**
+ * Decrements the ticket count for the employee.
+ *
+ * Checks if the current ticket count is greater than 0 before decrementing.
+ * Calls `saveCount` from the parent (`App`) with the updated count and employee's `id`
+ * to synchronise the parent's state with the change.
+ */
   const decrementCounter = () => {
-    if (ticketCount > 0) {
-      const newTicketCount = ticketCount - 1;
-      setTicketCount(newTicketCount);
+    if (counter > 0) {
+      const newTicketCount = counter - 1;
       saveCount(id, newTicketCount);
     }
   };
@@ -47,7 +42,7 @@ const Employee = ({ id, name, role, counter, saveCount }: EmployeeProps) => {
       <p className="employee__role">{role}</p>
       <div className="employee__counter">
         <p>Tickets</p>
-        {ticketCount}
+        {counter}
         <div className="employee__buttons">
           <button
             type="button"
